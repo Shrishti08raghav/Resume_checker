@@ -1,0 +1,17 @@
+--- MISSING SKILLS ANALYSIS REPORT ---
+
+Candidate: kanishka.pdf
+  [FRONTEND] Missing: html
+  [BACKEND] Missing: django, nodejs
+  [API] Missing: json, oauth, graphql
+--------------------------------------------------
+Candidate: Rohit.pdf
+  [FRONTEND] All skills present!
+  [BACKEND] Missing: django, python, nodejs
+  [API] Missing: json, oauth, graphql
+--------------------------------------------------
+Candidate: shrishti.pdf
+  [FRONTEND] Missing: react
+  [BACKEND] Missing: django, nodejs
+  [API] Missing: json, oauth, rest, graphql
+--------------------------------------------------
