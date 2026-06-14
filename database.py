@@ -45,6 +45,4 @@ def get_all_results():
 
 # Testing ke liye agar is file ko direct run karein
 if __name__ == "__main__":
-    init_db()git add .
-git commit -m "Fixed database import line in app.py"
-git push origin main
+  init_db()

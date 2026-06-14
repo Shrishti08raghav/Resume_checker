@@ -7,7 +7,7 @@ import time
 import re
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from database import init_db, save_analysis
+from database import init_db, save_result
 
 init_db()
 
@@ -275,7 +275,7 @@ if generate:
                 "Missing Skills": missing_skills,
             })
 
-            save_analysis(res.name, len(matched_skills), skill_pct)
+            save_result(res.name, len(matched_skills), skill_pct)
             bar.progress(15 + int(((i + 1) / n) * 85))
             time.sleep(0.05)
 
