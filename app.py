@@ -7,7 +7,7 @@ import time
 import re
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from database import init_db, save_result
+from database import init_db, save_analysis
 
 init_db()
 
