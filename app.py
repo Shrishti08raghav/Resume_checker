@@ -275,7 +275,7 @@ if generate:
                 "Missing Skills": missing_skills,
             })
 
-            save_result(res.name, len(matched_skills), skill_pct)
+            save_analysis(res.name, len(matched_skills), skill_pct)
             bar.progress(15 + int(((i + 1) / n) * 85))
             time.sleep(0.05)
 
