@@ -1,8 +1,10 @@
 # database.py
 import sqlite3
+import os
 
-DB_NAME = "results.db"
-
+# Render par file path ka issue na ho, isliye absolute path handle kiya hai
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB_NAME = os.path.join(BASE_DIR, "results.db")
 
 def init_db():
     """Create the results table if it doesn't already exist."""
@@ -19,7 +21,7 @@ def init_db():
     """)
     conn.commit()
     conn.close()
-
+    print("Database initialized successfully at:", DB_NAME)
 
 def save_result(candidate, score, match_pct):
     """Insert a single candidate's result into the database."""
@@ -27,11 +29,10 @@ def save_result(candidate, score, match_pct):
     cursor = conn.cursor()
     cursor.execute(
         "INSERT INTO results (candidate, score, match_pct) VALUES (?, ?, ?)",
-        (candidate, score, match_pct)
+        (candidate, int(score), float(match_pct))
     )
     conn.commit()
     conn.close()
-
 
 def get_all_results():
     """Fetch all stored results, most recent first."""
@@ -41,3 +42,9 @@ def get_all_results():
     rows = cursor.fetchall()
     conn.close()
     return rows
+
+# Testing ke liye agar is file ko direct run karein
+if __name__ == "__main__":
+    init_db()git add .
+git commit -m "Fixed database import line in app.py"
+git push origin main
